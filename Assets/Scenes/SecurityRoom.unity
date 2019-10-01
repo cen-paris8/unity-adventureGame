@@ -122,7 +122,26 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 23800000, guid: 12ff5bb3c39b7b647bba8fc00a1989a8, type: 2}
---- !u!114 &25289150
+--- !u!1 &42747398 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 105628, guid: d48734bd22479a14cb1a52b40aa09db4,
+    type: 3}
+  m_PrefabInstance: {fileID: 1276257937}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &42747399
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 42747398}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84eca74c865a72b4d92cb095b221bdf8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  reactions: []
+--- !u!114 &62534259
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -131,12 +150,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2392585f8a4e53a42a0ddc8de25e64d2, type: 3}
+  m_Script: {fileID: 11500000, guid: 7c112f1089e7bd54d87d2acac73e9b3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioSource: {fileID: 0}
-  audioClip: {fileID: 0}
-  delay: 0
+  description: PickedUpCoin
+  satisfied: 0
+  hash: 514706441
 --- !u!1001 &65161318
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -150,16 +169,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 11441280, guid: d48734bd22479a14cb1a52b40aa09db4, type: 3}
       propertyPath: reactions.Array.size
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 11441280, guid: d48734bd22479a14cb1a52b40aa09db4, type: 3}
       propertyPath: reactions.Array.data[0]
       value: 
-      objectReference: {fileID: 1272427429}
+      objectReference: {fileID: 2139421750}
     - target: {fileID: 11441280, guid: d48734bd22479a14cb1a52b40aa09db4, type: 3}
       propertyPath: reactions.Array.data[1]
       value: 
-      objectReference: {fileID: 25289150}
+      objectReference: {fileID: 387367475}
     - target: {fileID: 11441280, guid: d48734bd22479a14cb1a52b40aa09db4, type: 3}
       propertyPath: reactions.Array.data[2]
       value: 
@@ -264,6 +283,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 11484708, guid: d48734bd22479a14cb1a52b40aa09db4, type: 3}
+      propertyPath: conditionCollections.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11484708, guid: d48734bd22479a14cb1a52b40aa09db4, type: 3}
+      propertyPath: interactionLocation
+      value: 
+      objectReference: {fileID: 65161321}
+    - target: {fileID: 11484708, guid: d48734bd22479a14cb1a52b40aa09db4, type: 3}
+      propertyPath: defaultReactionCollection
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 11484708, guid: d48734bd22479a14cb1a52b40aa09db4, type: 3}
+      propertyPath: conditionCollections.Array.data[0]
+      value: 
+      objectReference: {fileID: 131261672}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d48734bd22479a14cb1a52b40aa09db4, type: 3}
 --- !u!114 &65161319 stripped
@@ -275,15 +310,31 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d85941078afdf3244b2a1ae50fea256c, type: 3}
+  m_Script: {fileID: 11500000, guid: afa9f1cf49022334f9810db7d012604d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!4 &65161320 stripped
+--- !u!4 &65161321 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 491826, guid: d48734bd22479a14cb1a52b40aa09db4,
     type: 3}
   m_PrefabInstance: {fileID: 65161318}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &131261672
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d49018c07b51e3540b292204004bfbc9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  description: New condition collection
+  requiredConditions:
+  - {fileID: 62534259}
+  reactionCollection: {fileID: 0}
 --- !u!114 &236826289
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -296,8 +347,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2392585f8a4e53a42a0ddc8de25e64d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioSource: {fileID: 0}
-  audioClip: {fileID: 0}
+--- !u!114 &387367475
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a868ef6727b4d65489ae25f4a3b5a928, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioSource: {fileID: 905901658}
+  audioClip: {fileID: 8300000, guid: 0d494c2c0a97b4fdc8de4ad7f2e44f43, type: 3}
+  delay: 0
+--- !u!114 &391672883
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5818e3128b4b1b34ca3a8de36cf11d28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  message: 
+  textColor: {r: 1, g: 1, b: 1, a: 1}
   delay: 0
 --- !u!114 &669618034
 MonoBehaviour:
@@ -311,9 +389,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4900350095ceff24fbe8c1ac5f1e17c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  description: 
-  requiredConditions: []
-  reactionCollection: {fileID: 0}
 --- !u!114 &682091567
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -326,9 +401,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2392585f8a4e53a42a0ddc8de25e64d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioSource: {fileID: 0}
-  audioClip: {fileID: 0}
-  delay: 0
 --- !u!114 &693356648
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -341,14 +413,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03f8a149ea5a3aa4583dc1cab3334cbc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  message: 
-  textColor:
-    r: 1
-    g: 1
-    b: 1
-    a: 1
-  delay: 0
-  textManager: {fileID: 0}
 --- !u!114 &789374198
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -361,9 +425,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2392585f8a4e53a42a0ddc8de25e64d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioSource: {fileID: 0}
-  audioClip: {fileID: 0}
-  delay: 0
 --- !u!114 &815170027
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -376,10 +437,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a931d1c243b462c46bad5f7d2aae5949, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delay: 0
-  animator: {fileID: 0}
-  trigger: 
-  triggerHash: 0
 --- !u!1001 &904848606
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -393,7 +450,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 11441280, guid: d48734bd22479a14cb1a52b40aa09db4, type: 3}
       propertyPath: reactions.Array.size
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 11441280, guid: d48734bd22479a14cb1a52b40aa09db4, type: 3}
       propertyPath: reactions.Array.data[0]
@@ -471,7 +528,24 @@ PrefabInstance:
       propertyPath: m_Center.y
       value: 0.2
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 11484708, guid: d48734bd22479a14cb1a52b40aa09db4, type: 3}
+      propertyPath: conditionCollections.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11484708, guid: d48734bd22479a14cb1a52b40aa09db4, type: 3}
+      propertyPath: interactionLocation
+      value: 
+      objectReference: {fileID: 904848608}
+    - target: {fileID: 11484708, guid: d48734bd22479a14cb1a52b40aa09db4, type: 3}
+      propertyPath: defaultReactionCollection
+      value: 
+      objectReference: {fileID: 904848610}
+    - target: {fileID: 11484708, guid: d48734bd22479a14cb1a52b40aa09db4, type: 3}
+      propertyPath: conditionCollections.Array.data[0]
+      value: 
+      objectReference: {fileID: 1411075689}
+    m_RemovedComponents:
+    - {fileID: 11441280, guid: d48734bd22479a14cb1a52b40aa09db4, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: d48734bd22479a14cb1a52b40aa09db4, type: 3}
 --- !u!114 &904848607 stripped
 MonoBehaviour:
@@ -485,6 +559,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d85941078afdf3244b2a1ae50fea256c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!4 &904848608 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 491826, guid: d48734bd22479a14cb1a52b40aa09db4,
+    type: 3}
+  m_PrefabInstance: {fileID: 904848606}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &904848609 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 105628, guid: d48734bd22479a14cb1a52b40aa09db4,
+    type: 3}
+  m_PrefabInstance: {fileID: 904848606}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &904848610
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 904848609}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84eca74c865a72b4d92cb095b221bdf8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  reactions: []
 --- !u!1001 &905901657
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -530,6 +629,12 @@ PrefabInstance:
       objectReference: {fileID: 8300000, guid: 19e9160e69a211246b8d3e4de36e96ec, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0036c73aed31ec14fbbf45853c79fc14, type: 3}
+--- !u!82 &905901658 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 8277418, guid: 0036c73aed31ec14fbbf45853c79fc14,
+    type: 3}
+  m_PrefabInstance: {fileID: 905901657}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &921382151
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -542,10 +647,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a931d1c243b462c46bad5f7d2aae5949, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delay: 0
-  animator: {fileID: 0}
-  trigger: 
-  triggerHash: 0
 --- !u!1001 &1043656357
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -605,6 +706,14 @@ PrefabInstance:
       propertyPath: m_LocalRotation.w
       value: 0.6549227
       objectReference: {fileID: 0}
+    - target: {fileID: 11497582, guid: 8902cc0c7910bcd4ab3ccacb67555809, type: 3}
+      propertyPath: moveCamera
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11497582, guid: 8902cc0c7910bcd4ab3ccacb67555809, type: 3}
+      propertyPath: playerPosition
+      value: 
+      objectReference: {fileID: 1094123813}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8902cc0c7910bcd4ab3ccacb67555809, type: 3}
 --- !u!1001 &1094123811
@@ -660,6 +769,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cc267ddb2ba6384c9f89a248730ffaf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!4 &1094123813 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4000014075113472, guid: ab5f05eb414b65f4f9c285f785c1dfad,
+    type: 3}
+  m_PrefabInstance: {fileID: 1094123811}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1100553211
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -672,9 +787,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4900350095ceff24fbe8c1ac5f1e17c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  description: 
-  requiredConditions: []
-  reactionCollection: {fileID: 0}
 --- !u!1 &1114146746
 GameObject:
   m_ObjectHideFlags: 0
@@ -701,10 +813,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1114146746}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1fc7ecfe98531f2429694b8c81a6748a, type: 3}
+  m_Script: {fileID: 11500000, guid: 84eca74c865a72b4d92cb095b221bdf8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reactions: []
+  reactions:
+  - {fileID: 391672883}
+  - {fileID: 1164572255}
 --- !u!4 &1114146748
 Transform:
   m_ObjectHideFlags: 0
@@ -713,7 +827,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1114146746}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -0.1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1276257939}
@@ -731,10 +845,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a931d1c243b462c46bad5f7d2aae5949, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1164572255
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a868ef6727b4d65489ae25f4a3b5a928, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioSource: {fileID: 0}
+  audioClip: {fileID: 0}
   delay: 0
-  animator: {fileID: 0}
-  trigger: 
-  triggerHash: 0
 --- !u!1001 &1183915326
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -814,8 +939,24 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 11499140, guid: bd26dac15723bf047941895f28e6c242, type: 3}
+      propertyPath: text
+      value: 
+      objectReference: {fileID: 1183915327}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd26dac15723bf047941895f28e6c242, type: 3}
+--- !u!114 &1183915327 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 11469028, guid: bd26dac15723bf047941895f28e6c242,
+    type: 3}
+  m_PrefabInstance: {fileID: 1183915326}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1231559414
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -828,30 +969,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a931d1c243b462c46bad5f7d2aae5949, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delay: 0
-  animator: {fileID: 0}
-  trigger: 
-  triggerHash: 0
---- !u!114 &1272427429
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 03f8a149ea5a3aa4583dc1cab3334cbc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  message: 
-  textColor:
-    r: 1
-    g: 1
-    b: 1
-    a: 1
-  delay: 0
-  textManager: {fileID: 0}
 --- !u!1001 &1276257937
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -865,7 +982,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 11441280, guid: d48734bd22479a14cb1a52b40aa09db4, type: 3}
       propertyPath: reactions.Array.size
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 11441280, guid: d48734bd22479a14cb1a52b40aa09db4, type: 3}
       propertyPath: reactions.Array.data[0]
@@ -930,7 +1047,7 @@ PrefabInstance:
     - target: {fileID: 11485606, guid: d48734bd22479a14cb1a52b40aa09db4, type: 3}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
       value: 
-      objectReference: {fileID: 1276257938}
+      objectReference: {fileID: 1276257941}
     - target: {fileID: 6512962, guid: d48734bd22479a14cb1a52b40aa09db4, type: 3}
       propertyPath: m_Size.x
       value: 2
@@ -987,7 +1104,7 @@ PrefabInstance:
     - target: {fileID: 11484708, guid: d48734bd22479a14cb1a52b40aa09db4, type: 3}
       propertyPath: conditionCollections.Array.data[0].reaction
       value: 
-      objectReference: {fileID: 1114146747}
+      objectReference: {fileID: 0}
     - target: {fileID: 11484708, guid: d48734bd22479a14cb1a52b40aa09db4, type: 3}
       propertyPath: conditionCollections.Array.data[0]
       value: 
@@ -995,29 +1112,19 @@ PrefabInstance:
     - target: {fileID: 11484708, guid: d48734bd22479a14cb1a52b40aa09db4, type: 3}
       propertyPath: interactionLocation
       value: 
-      objectReference: {fileID: 65161320}
+      objectReference: {fileID: 1996050275}
     - target: {fileID: 11484708, guid: d48734bd22479a14cb1a52b40aa09db4, type: 3}
       propertyPath: defaultReaction
       value: 
-      objectReference: {fileID: 1276257941}
+      objectReference: {fileID: 0}
     - target: {fileID: 11484708, guid: d48734bd22479a14cb1a52b40aa09db4, type: 3}
       propertyPath: defaultReactionCollection
       value: 
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 11484708, guid: d48734bd22479a14cb1a52b40aa09db4, type: 3}
+    - {fileID: 11441280, guid: d48734bd22479a14cb1a52b40aa09db4, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: d48734bd22479a14cb1a52b40aa09db4, type: 3}
---- !u!114 &1276257938 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 11484708, guid: d48734bd22479a14cb1a52b40aa09db4,
-    type: 3}
-  m_PrefabInstance: {fileID: 1276257937}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1276257940}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: afa9f1cf49022334f9810db7d012604d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1276257939 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 474418, guid: d48734bd22479a14cb1a52b40aa09db4,
@@ -1030,18 +1137,22 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1276257937}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1276257941 stripped
+--- !u!114 &1276257941
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 11441280, guid: d48734bd22479a14cb1a52b40aa09db4,
-    type: 3}
-  m_PrefabInstance: {fileID: 1276257937}
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1276257940}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1fc7ecfe98531f2429694b8c81a6748a, type: 3}
+  m_Script: {fileID: 11500000, guid: afa9f1cf49022334f9810db7d012604d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interactionLocation: {fileID: 1996050275}
+  conditionCollections:
+  - {fileID: 1553378803}
+  defaultReactionCollection: {fileID: 42747399}
 --- !u!114 &1283123098
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1054,9 +1165,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4900350095ceff24fbe8c1ac5f1e17c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  description: 
-  requiredConditions: []
-  reactionCollection: {fileID: 0}
 --- !u!114 &1340991283
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1069,14 +1177,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03f8a149ea5a3aa4583dc1cab3334cbc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  message: 
-  textColor:
-    r: 1
-    g: 1
-    b: 1
-    a: 1
-  delay: 0
-  textManager: {fileID: 0}
+--- !u!114 &1411075689
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d49018c07b51e3540b292204004bfbc9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  description: New condition collection
+  requiredConditions:
+  - {fileID: 1893580481}
+  reactionCollection: {fileID: 0}
+--- !u!114 &1495931035
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c112f1089e7bd54d87d2acac73e9b3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  description: LasersDeactivated
+  satisfied: 1
+  hash: -2015270594
 --- !u!1 &1536750085
 GameObject:
   m_ObjectHideFlags: 0
@@ -1106,7 +1237,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a1a9400b6609fb4aba06d78b45ca76c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingPointName: 
 --- !u!4 &1536750087
 Transform:
   m_ObjectHideFlags: 0
@@ -1133,10 +1263,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24dc6b17b276d6948903ade30dec71eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: 
-  startingPointInLoadedScene: 
-  playerSaveData: {fileID: 0}
-  sceneController: {fileID: 0}
+--- !u!114 &1553378803
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d49018c07b51e3540b292204004bfbc9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  description: LaserGridOff
+  requiredConditions:
+  - {fileID: 1495931035}
+  reactionCollection: {fileID: 1114146747}
 --- !u!114 &1578821600
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1149,10 +1291,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a931d1c243b462c46bad5f7d2aae5949, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delay: 0
-  animator: {fileID: 0}
-  trigger: 
-  triggerHash: 0
 --- !u!114 &1610222598
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1165,10 +1303,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a931d1c243b462c46bad5f7d2aae5949, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delay: 0
-  animator: {fileID: 0}
-  trigger: 
-  triggerHash: 0
 --- !u!1 &1627901430
 GameObject:
   m_ObjectHideFlags: 0
@@ -1215,7 +1349,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fc7ecfe98531f2429694b8c81a6748a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reactions: []
 --- !u!114 &1651130631
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1228,9 +1361,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4900350095ceff24fbe8c1ac5f1e17c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  description: 
-  requiredConditions: []
-  reactionCollection: {fileID: 0}
 --- !u!1 &1728344117
 GameObject:
   m_ObjectHideFlags: 0
@@ -1566,6 +1696,21 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1746140237}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1893580481
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c112f1089e7bd54d87d2acac73e9b3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  description: PickedUpCoin
+  satisfied: 0
+  hash: 514706441
 --- !u!114 &1921767126
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1578,10 +1723,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a931d1c243b462c46bad5f7d2aae5949, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delay: 0
-  animator: {fileID: 0}
-  trigger: 
-  triggerHash: 0
 --- !u!1 &1955368932
 GameObject:
   m_ObjectHideFlags: 0
@@ -1628,4 +1769,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fc7ecfe98531f2429694b8c81a6748a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reactions: []
+--- !u!4 &1996050275 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 491826, guid: d48734bd22479a14cb1a52b40aa09db4,
+    type: 3}
+  m_PrefabInstance: {fileID: 1276257937}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2139421750
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5818e3128b4b1b34ca3a8de36cf11d28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  message: He looks pretty !
+  textColor: {r: 1, g: 1, b: 1, a: 1}
+  delay: 0

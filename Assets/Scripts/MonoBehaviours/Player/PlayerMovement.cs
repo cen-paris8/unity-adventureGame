@@ -80,7 +80,8 @@ public class PlayerMovement : MonoBehaviour
 
     private void Stopping (out float speed)
     {
-        agent.Stop();
+        // agent.Stop();
+        agent.isStopped = true;
 
         transform.position = destinationPosition;
         speed = 0f;
@@ -98,7 +99,8 @@ public class PlayerMovement : MonoBehaviour
 
     private void Slowing (out float speed, float distanceToDestination)
     {
-        agent.Stop();
+        // agent.Stop();
+        agent.isStopped = true;
 
         float proportionalDistance = 1f - distanceToDestination / agent.stoppingDistance;
 
@@ -134,7 +136,8 @@ public class PlayerMovement : MonoBehaviour
             destinationPosition = pData.pointerCurrentRaycast.worldPosition;
 
         agent.SetDestination(destinationPosition);
-        agent.Resume ();
+        //agent.Resume ();
+        agent.isStopped = false;
     }
 
 
@@ -148,7 +151,8 @@ public class PlayerMovement : MonoBehaviour
         destinationPosition = currentInteractable.interactionLocation.position;
 
         agent.SetDestination(destinationPosition);
-        agent.Resume ();
+        //agent.Resume ();
+        agent.isStopped = false;
     }
 
 
